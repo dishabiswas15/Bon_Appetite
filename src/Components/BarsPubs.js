@@ -1,6 +1,7 @@
 import BarItems from "./BarItems";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import BreweriesItem from "./BreweriesItem";
 const barsData = [
   {
     id: 1,
@@ -128,8 +129,60 @@ const barsData = [
   //   address: "Camac Street Area,Kolkata",
   // },
 ];
+const breweriesData = [
+  {
+    id: 1,
+    name: "The Brewmaster",
+    cover:
+      "https://b.zmtcdn.com/data/reviews_photos/354/f77a158c9f12cf26edae8ba5ea1d1354_1577694717.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
+    cuisins: "Continental, Chinese, North Indian, Sichuan, Deserts",
+    address: "Sector 5, Salt Lake, Kolkata",
+  },
+  {
+    id: 2,
+    name: "Capella, Alt-Air Boutique Hotel",
+    cover:
+      "https://b.zmtcdn.com/data/pictures/5/18620365/1cb7baf6b4984296f7c7bed1a05e88c0_featured_v2.jpg",
+    cuisins: "Cntinental, Italian, Finger Food",
+    address: "Alt-Air Boutique Hotel, Kolkata",
+  },
+  {
+    id: 3,
+    name: "Country Roads",
+    cover:
+      "https://b.zmtcdn.com/data/pictures/5/18249185/a2323a576d314a72892f160b333553ff.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
+    cuisins: "Continental, Chinese, North Indian, Sichuan, Beverages, Deserts",
+    address: "The Galleria of Kolkata, New Town, Kolkata",
+  },
+  {
+    id: 4,
+    name: "Raize The Bar",
+    cover:
+      "https://b.zmtcdn.com/data/pictures/2/18287272/3b7105de5eff99721a0b173c776c1219.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
+    cuisins:
+      "North Indian, Continental, Chinese, Oriental, Italian, Biriyani, Kebab",
+    address: "Sector 5, Salt Lake, Kolkata",
+  },
+  {
+    id: 5,
+    name: "Scrapyard",
+    cover:
+      "https://lh3.googleusercontent.com/p/AF1QipOI1-K8QyefV3lmnpsjvMWR5GYaOks6Pz8GPbpE=s680-w680-h510",
+    cuisins:
+      "Continental, Chinese, North Indian, FastFood, StreetFood, Beveragess,Deserts",
+    address: "Camac Street Area, Kolkata",
+  },
+  {
+    id: 6,
+    name: "The Brewhive",
+    cover:
+      "https://b.zmtcdn.com/data/pictures/9/18784859/82e425608f727b44b42fea7f0b84656c.jpg?output-format=webp&fit=around|771.75:416.25&crop=771.75:416.25;*,*",
+    cuisins: "Chinese, Continental, Italian, Pizza, North Indian, Deserts",
+    address: "Sector 5, Salt Lake, Kolkata",
+  },
+];
 
-import { DiningCarousel } from "./DiningCarousel";
+//import { DiningCarousel } from "./DiningCarousel";
 
 const BarsPubs = () => {
   const params = useParams();
@@ -147,7 +200,7 @@ const BarsPubs = () => {
         <div>
           <div className="flex flex-wrap justify-center">
             {barsData.map((bar) => {
-              return <h1>{bar.id}</h1>;
+              return <BarItems key={bar.id} bar={bar} />;
             })}
           </div>
         </div>
@@ -160,6 +213,14 @@ const BarsPubs = () => {
           className="relative max-w-7xl mx-auto my-1 rounded-lg"
           src="https://b.zmtcdn.com/data/collections/043714a8f7d80d494329b69c648a2bc6_1675237482.jpg?output-format=webp&fit=around|858.4000000000001:256&crop=858.4000000000001:256;*,*"
         />
+        
+        <div>
+          <div className="flex flex-wrap justify-center">
+            {breweriesData.map((breweries) => {
+              return <BreweriesItem key={breweries.id} breweries={breweries} />;
+            })}
+          </div>
+        </div>
       </>
     );
   }

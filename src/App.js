@@ -10,13 +10,13 @@ import Error from "./Components/Error";
 import Contact from "./Components/Contact";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import Profile from "./Components/Profile";
-import Shimmer from "./Components/Shimmer";
 import Instamart from "./Components/Instamart";
 import UserContext from "../Utils/UserContext";
 import { Provider } from "react-redux";
 import store from "../Utils/store";
 import Cart from "./Components/Cart";
 import BarsPubs from "./Components/BarsPubs";
+import SignIn from "./Components/SignIn";
 
 //const Instamart = lazy(() => import("./components/Instamart")); // Dyanamic import or Lazy import
 
@@ -106,7 +106,10 @@ const appRouter = createBrowserRouter([
         path: "dining/:id",
         element: <BarsPubs />
       },
-      
+      {
+        path: "/signIn",
+        element: <SignIn/>
+      }
     ],
   },
 ]);

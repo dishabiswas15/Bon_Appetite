@@ -1,8 +1,8 @@
 export const Img_CDN_URL = 
 "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
-export const FETCH_MENU_URL ="https://www.swiggy.com/dapi/menu/v4/full?lat=22.572577&lng=88.387538&menuId="
-
+export const FETCH_MENU_URL ="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.572577&lng=88.387538&restaurantId="
+export const end = "&submitAction=ENTER"
 export const FETCH_SWIGGY_API ="https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.572577&lng=88.387538&page_type=DESKTOP_WEB_LISTING"
 
 export const restaurantList = [
