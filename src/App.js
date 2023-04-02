@@ -7,7 +7,6 @@ import Footer from "./Components/Footer";
 import About from "./Components/About";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Error from "./Components/Error";
-import Contact from "./Components/Contact";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import Profile from "./Components/Profile";
 import Instamart from "./Components/Instamart";
@@ -17,7 +16,7 @@ import store from "../Utils/store";
 import Cart from "./Components/Cart";
 import BarsPubs from "./Components/BarsPubs";
 import SignIn from "./Components/SignIn";
-
+import Help from "./Components/Help";
 //const Instamart = lazy(() => import("./components/Instamart")); // Dyanamic import or Lazy import
 
 /**
@@ -43,7 +42,7 @@ const AppLayout = () => {
     name: "Disha Biswas",
     email: "biswas.disha15@gmail.com",
   });
-  
+
   return (
     <Provider store={store}>
       <UserContext.Provider
@@ -58,8 +57,6 @@ const AppLayout = () => {
     </Provider>
   );
 };
-
-
 
 const appRouter = createBrowserRouter([
   {
@@ -82,21 +79,16 @@ const appRouter = createBrowserRouter([
         ],
       },
       {
-        path: "/contact", // URL
-        exact: true,
-        element: <Contact />,
-      },
-      {
         path: "/restaurant/:id", // URL
         element: <RestaurantMenu />,
       },
       {
-        path: "/instamart", //URL
-        element: (
-          //<Suspense fallback = {<Shimmer/>}>
-          <Instamart />
-        ),
-        //</Suspense>
+        path: "/help",
+        element: <Help />,
+      },
+      {
+        path: "/instamart",
+        element: <Instamart />,
       },
       {
         path: "/cart", // URL
@@ -104,12 +96,12 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "dining/:id",
-        element: <BarsPubs />
+        element: <BarsPubs />,
       },
       {
         path: "/signIn",
-        element: <SignIn/>
-      }
+        element: <SignIn />,
+      },
     ],
   },
 ]);

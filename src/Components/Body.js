@@ -58,10 +58,10 @@ const Body = () => {
 
   return (
     <>
-      <div className="search-container p-5 bg-pink-100 my-2">
+      <div className="search-container p-5 my-2">
         <input
           type="text"
-          className="search-bar p-1 m-2"
+          className="search-bar p-1 m-2 bg-gray-100 rounded-md"
           placeholder="Search"
           value={searchInput}
           onChange={(e) => {
