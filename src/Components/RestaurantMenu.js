@@ -54,7 +54,7 @@ const RestaurantMenu = () => {
     <Shimmer />
   ) : (
     <div className="grid justify-center">
-      <div className="bg-slate-50 p-2 m-2">
+      <div className="bg-slate-50 p-4 m-2">
         {/* <h1>Restaurant id: {id}</h1> */}
         <div className="text-2xl font-bold">
           {restaurant?.cards[0]?.card?.card?.info?.name}
@@ -68,13 +68,43 @@ const RestaurantMenu = () => {
               <li className="font-light text-sm">
                 {restaurant?.cards[0]?.card?.card?.info?.city}
               </li>
-              <li className="font-bold text-sm">
-                {restaurant?.cards[0]?.card?.card?.info?.avgRating} star
-              </li>
+
               <li className="font-bold text-sm">
                 {restaurant?.cards[0]?.card?.card?.info?.costForTwoMessage}
               </li>
-            </ul>
+              </ul>
+              <div className="flex justify-between bg-white h-8 py-1 shadow-md">
+              {restaurant?.cards[0]?.card?.card?.info?.avgRating <4 ? (
+                <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="w-6 h-6 text-green-400"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              ):(
+                <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="w-6 h-6 text-yellow-400"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+            clip-rule="evenodd"
+          />
+        </svg>
+              )}
+              <h1 className="font-bold text-sm px-2">
+                {restaurant?.cards[0]?.card?.card?.info?.avgRating}{" "}
+              </h1>
+              </div>
           </div>
         </div>
       </div>
@@ -109,10 +139,9 @@ const RestaurantMenu = () => {
                   {item?.card?.info?.description}
                 </p>
                 {cartItems.findIndex(
-                    (i) => item?.card?.info?.id == i.card?.info?.id
-                  )?.qty !=0 ? (
-                <div className="flex items-center border border-gray-300 w-16 justify-around">
-                  
+                  (i) => item?.card?.info?.id == i.card?.info?.id
+                )?.qty != 0 ? (
+                  <div className="flex items-center border border-gray-300 w-16 justify-around">
                     <>
                       <button
                         className="text-xl"
@@ -137,17 +166,16 @@ const RestaurantMenu = () => {
                         +
                       </button>
                     </>
-                    </div>
-                  ) : (
-                    <button
-                      className="bg-green-100 p-2 m-2"
-                      onClick={() => addFoodItem(item)}
-                    >
-                      Add
-                    </button>
-                  )}
-                </div>
-              
+                  </div>
+                ) : (
+                  <button
+                    className="bg-green-100 p-2 m-2"
+                    onClick={() => addFoodItem(item)}
+                  >
+                    Add
+                  </button>
+                )}
+              </div>
             </div>
           </>
         ))}

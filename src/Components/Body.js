@@ -43,7 +43,7 @@ const Body = () => {
   async function getRestaurants() {
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.572577&lng=88.387538&page_type=DESKTOP_WEB_LISTING");
     const json = await data.json();
-
+    console.log(json);
     //Optional Chaining
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
@@ -71,7 +71,7 @@ const Body = () => {
         />
 
         <button
-          className="bg-rose-600 p-1 m-2 rounded-md hover:bg-rose-700"
+          className="bg-yellow-400 p-1 m-2 rounded-md hover:bg-yellow-600"
           onClick={() => {
             //need to filter the data
             // console.log(activeTab);

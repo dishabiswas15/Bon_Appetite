@@ -100,7 +100,7 @@ const DeliveryCollections = () => {
   return (
     <div className="delivery-collection bg-gray-50">
       <div className="max-width max-w-5xl mx-auto my-0">
-        <div className="collection-title text-2xl mb-8 font-semibold">
+        <div className="collection-title text-2xl  my-8 font-semibold">
           Eat What Makes You Happy
         </div>
 

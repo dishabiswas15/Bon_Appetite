@@ -17,6 +17,7 @@ import Cart from "./Components/Cart";
 import BarsPubs from "./Components/BarsPubs";
 import SignIn from "./Components/SignIn";
 import Help from "./Components/Help";
+import Login from "./Components/Login";
 //const Instamart = lazy(() => import("./components/Instamart")); // Dyanamic import or Lazy import
 
 /**
@@ -102,6 +103,10 @@ const appRouter = createBrowserRouter([
         path: "/signIn",
         element: <SignIn />,
       },
+      {
+        path: "/logIn",
+        element: <Login/>
+      }
     ],
   },
 ]);

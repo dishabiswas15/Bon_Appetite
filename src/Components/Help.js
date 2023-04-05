@@ -1,12 +1,36 @@
 import { useState } from "react";
 const Section = ({ title, description, isVisible, setIsVisible }) => {
   return (
-    <div className="bg-white drop-shadow-md border border-gray-300 p-2 m-2">
-      <h3 className="font-bold text-l">{title}</h3>
-      {isVisible ? (
-        <>
+    <div className="bg-white">
+      <div className="bg-white drop-shadow-md border rounded-md border-gray-300 p-4 m-4 ">
+        <h3 className="font-bold text-l">{title}</h3>
+        {isVisible ? (
+          <>
+            <button
+              onClick={() => setIsVisible(false)}
+              className="cursor-pointer underline"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-4 h-4"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4.5 15.75l7.5-7.5 7.5 7.5"
+                />
+              </svg>
+            </button>
+
+            <p>{description}</p>
+          </>
+        ) : (
           <button
-            onClick={() => setIsVisible(false)}
+            onClick={() => setIsVisible(true)}
             className="cursor-pointer underline"
           >
             <svg
@@ -20,40 +44,19 @@ const Section = ({ title, description, isVisible, setIsVisible }) => {
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                d="M4.5 15.75l7.5-7.5 7.5 7.5"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
               />
             </svg>
           </button>
-          <p>{description}</p>
-        </>
-      ) : (
-        <button
-          onClick={() => setIsVisible(true)}
-          className="cursor-pointer underline"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-4 h-4"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-            />
-          </svg>
-        </button>
-      )}
+        )}
+      </div>
     </div>
   );
 };
 const Help = () => {
   const [visibleSection, setVisibleSection] = useState("");
   return (
-    <div>
+    <div className="">
       <Section
         title={"Can I edit my order?"}
         description={
@@ -108,6 +111,7 @@ const Help = () => {
             : setVisibleSection("");
         }}
       />
+      <div className="pb-12">
       <Section
         title={"Do you charge for delivery?"}
         description={
@@ -120,11 +124,7 @@ const Help = () => {
             : setVisibleSection("");
         }}
       />
-
-      {/* <AboutInstamart/>
-            <DetailsOfInstamart/>
-            <Produc/>
-            <Career/> */}
+      </div>
     </div>
   );
 };

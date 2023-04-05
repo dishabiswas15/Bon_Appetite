@@ -33,7 +33,7 @@ const Header = () => {
     totalItems += element?.qty;
   });
   return (
-    <div className="w-full flex justify-between">
+    <div className="w-full flex justify-between shadow-md">
       <Title />
       {/* <HeaderLocation/> */}
       <div className="nav-items">
@@ -72,19 +72,22 @@ const Header = () => {
         </ul>
       </div>
 
-      <h1 data-testid="onlineStatus">{isOnline ? "✅" : "❌"}</h1>
-      <h1 className="p-10 font-bold text-red-900">{user.name}</h1>
+      
+      {/* <h1 className="p-10 font-bold text-red-900">{user.name}</h1>
       {isLoggedIn ? (
         <button onClick={() => setIsLoggedIn(false)}>Logout</button>
       ) : (
-        // <div className="flex justify-between">
-        <>
-          <Link to="/signIn">
-            <button>SignIn</button>
-          </Link>
+        
+        
           <button onClick={() => setIsLoggedIn(true)}>Login</button>
-        </>
-      )}
+      )} */}
+      <div className="flex">
+      <Link to="/logIn" className="my-10">
+        <button className="bg-yellow-400 font-medium text-slate-800 w-20 h-9 rounded-md hover:bg-yellow-600">LogIn</button>
+
+      </Link>
+      <h1 className="pr-28 py-11" data-testid="onlineStatus">{isOnline ? "✅" : "❌"}</h1>
+      </div>
     </div>
   );
 };
