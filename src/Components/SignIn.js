@@ -16,7 +16,11 @@ const SignIn = () => {
     onSubmit: (values) => {
       console.log(values);
     },
+    
   });
+  {formik => {
+    console.log("formik props",formik);
+  }}
   return (
     <div className="flex justify-items-center justify-center mt-14 mb-4">
       <div className="w-full max-w-md">
