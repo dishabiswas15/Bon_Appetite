@@ -1,4 +1,4 @@
-import { useFormik } from "formik";
+import { Formik, useFormik } from "formik";
 import { signUpSchema } from "../schemas";
 import { Link } from "react-router-dom";
 
@@ -14,13 +14,11 @@ const SignIn = () => {
     //initialValues,
     validationSchema: signUpSchema,
     onSubmit: (values) => {
-      console.log(values);
+      console.log("values",values);
     },
     
   });
-  {formik => {
-    console.log("formik props",formik);
-  }}
+  console.log("props",formik);
   return (
     <div className="flex justify-items-center justify-center mt-14 mb-4">
       <div className="w-full max-w-md">
@@ -111,15 +109,22 @@ const SignIn = () => {
             ) : null}
           </div>
           <div>
-            <Link to="/">
+            {/* <Link to="/"> */}
               <button
                 type="submit"
-                disabled={!formik.isValid}
+                onClick={() => {
+                  if(formik.dirty){
+                    alert("Successfully signed in!! ")
+                    window.location.assign("/")
+                  }
+                  
+                } }
+                // disabled={!formik.isValid}
                 className="flex bg-yellow-400 text-slate-800 hover:bg-yellow-600 rounded-md font-semibold px-10 py-3 text-center ml-36 mt-11"
               >
                 Submit
               </button>
-            </Link>
+            {/* </Link> */}
           </div>
         </form>
 

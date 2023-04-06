@@ -12,7 +12,9 @@ const Login = () => {
     onSubmit: (values) => {
       console.log(values);
     },
+    
   });
+  console.log("props",formik);
   return (
     <div className="flex justify-items-center justify-center mt-14 mb-4">
       <div className="w-full max-w-md">
@@ -62,15 +64,23 @@ const Login = () => {
           </div>
 
           <div>
-            <Link to="/">
+            {/* <Link to="/"> */}
               <button
                 type="submit"
-                // disabled={!formik.isValid}
+                onClick={()=>{
+                  if(formik.values.email=="biswas.disha15@gmail.com" && formik.values.password=="123456"){
+                    alert("Successfully logged in !!")
+                    window.location.assign("/");
+                  }
+                  else{
+                    alert("Invalid User Id!!")
+                  }
+                }}
                 className="flex bg-yellow-400 text-slate-800 hover:bg-yellow-600 rounded-md font-semibold px-10 py-3 text-center ml-36 mt-11"
               >
                 Submit
               </button>
-            </Link>
+            {/* </Link> */}
           </div>
         </form>
         <p className="login pl-20 pt-6 pb-16 font-medium text-yellow-700">
