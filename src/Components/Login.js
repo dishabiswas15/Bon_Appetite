@@ -4,10 +4,8 @@ import { Link } from "react-router-dom";
 const Login = () => {
   const formik = useFormik({
     initialValues: {
-      name: "",
       email: "",
       password: "",
-      confirm_password: "",
     },
     // initialValues,
     validationSchema: signUpSchema,
@@ -62,17 +60,19 @@ const Login = () => {
               <p className="form-error">{formik.errors.password}</p>
             ) : null}
           </div>
+
+          <div>
+            <Link to="/">
+              <button
+                type="submit"
+                // disabled={!formik.isValid}
+                className="flex bg-yellow-400 text-slate-800 hover:bg-yellow-600 rounded-md font-semibold px-10 py-3 text-center ml-36 mt-11"
+              >
+                Submit
+              </button>
+            </Link>
+          </div>
         </form>
-        <div>
-          <Link to="/">
-            <button
-              type="submit"
-              className="flex bg-yellow-400 text-slate-800 hover:bg-yellow-600 rounded-md font-semibold px-10 py-3 text-center ml-36 mt-11"
-            >
-              Submit
-            </button>
-          </Link>
-        </div>
         <p className="login pl-20 pt-6 pb-16 font-medium text-yellow-700">
           Don't have an account?{" "}
           <Link to="/signIn" className="hover:underline">
