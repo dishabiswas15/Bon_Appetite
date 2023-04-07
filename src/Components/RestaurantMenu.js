@@ -47,7 +47,7 @@ const RestaurantMenu = () => {
     if (existingItem) {
       if(existingItem.qty>1){
         dispatch(
-          updateItem({
+          updateCart({
           //   id: existingItem.item?.data?.info?.id,
             id: existingItem.card.info.id,
             qty: existingItem.qty-1

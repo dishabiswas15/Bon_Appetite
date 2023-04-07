@@ -21,7 +21,7 @@ const Cart = () => {
         <div className="justify-between flex items-center mb-2">
           <h1 className="font-bold text- 3xl">Cart Items </h1>
           <button
-            className="bg-green-100 p-2 m-2"
+            className="bg-green-100 p-2 m-2 hover:bg-green-300 rounded-md"
             onClick={() => handleClearCart()}
           >
             Clear Cart
