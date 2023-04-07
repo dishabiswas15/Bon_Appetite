@@ -68,13 +68,16 @@ const Login = () => {
               <button
                 type="submit"
                 onClick={()=>{
-                  if(formik.values.email=="biswas.disha15@gmail.com" && formik.values.password=="123456"){
-                    alert("Successfully logged in !!")
-                    window.location.assign("/");
+                  if(formik.dirty){
+                    if(formik.values.email=="biswas.disha15@gmail.com" && formik.values.password=="123456"){
+                      alert("Successfully logged in !!")
+                      window.location.assign("/");
+                    }
+                    else{
+                      alert("Invalid User Id!!")
+                    }
                   }
-                  else{
-                    alert("Invalid User Id!!")
-                  }
+                  
                 }}
                 className="flex bg-yellow-400 text-slate-800 hover:bg-yellow-600 rounded-md font-semibold px-10 py-3 text-center ml-36 mt-11"
               >
