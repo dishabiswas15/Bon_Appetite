@@ -9,9 +9,9 @@ const Footer = () => {
         This site is developed by {user.name} - {user.email}
       </h4>
       <div className="flex ">
-        <span class="text-white">
+        <span className="text-white">
           Thanks for using{" "}
-          <a href="/" class="hover:underline">
+          <a href="/" className="hover:underline">
           Bon Appétit
           </a>
           
