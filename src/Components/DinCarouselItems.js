@@ -3,7 +3,7 @@
 const DinCarouselItems = ({ carousel }) => {
   return (
     <div>
-      <div className="dining-item-cover w-72 h-96 p-1 m-6 shadow-md border-white bg-white rounded-md hover:scale-105 ease-in-out duration-300 ">
+      <div className="dining-item-cover w-72 h-80 p-1 m-6 shadow-md border-white bg-white rounded-md hover:scale-105 ease-in-out duration-300 ">
         <img
           src={carousel.cover}
           className="dining-item-image inline-block p-2 cursor-pointer rounded-lg

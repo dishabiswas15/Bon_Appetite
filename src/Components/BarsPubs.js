@@ -192,20 +192,24 @@ const BarsPubs = () => {
   if (id == 1) {
     return (
       <>
-      <div className="py-7">
-        
-        <img
-          className="relative max-w-7xl mx-auto my-1 rounded-lg"
-          src="https://b.zmtcdn.com/data/collections/d2bf1a1e8403e207dc4001ee5021de91_1675232845.jpg?output-format=webp&fit=around|858.4000000000001:256&crop=858.4000000000001:256;*,*"
-        />
-        
-        <section className="pl-56 pb-56 absolute text-white bottom-0">
-        <h1 className="font-semibold text-4xl mb-4">Top Collections of Bars ans Pubs in Kolkata</h1>
-        <h6 className="">Bringing exciting flavours and oomph, these pubs and bars have got some really refreshing sips waiting for you.</h6>
-        </section>
-</div>
+        <div className="py-7">
+          <img
+            className="relative max-w-7xl mx-auto my-1 rounded-lg"
+            src="https://b.zmtcdn.com/data/collections/d2bf1a1e8403e207dc4001ee5021de91_1675232845.jpg?output-format=webp&fit=around|858.4000000000001:256&crop=858.4000000000001:256;*,*"
+          />
+
+          <section className="pl-56 pb-56 absolute text-white bottom-0">
+            <h1 className="font-semibold text-4xl mb-4">
+              Top Collections of Bars ans Pubs in Kolkata
+            </h1>
+            <h6 className="">
+              Bringing exciting flavours and oomph, these pubs and bars have got
+              some really refreshing sips waiting for you.
+            </h6>
+          </section>
+        </div>
         <div>
-          <div className="flex flex-wrap justify-center">
+          <div className="flex flex-wrap justify-center pb-12">
             {barsData.map((bar) => {
               return <BarItems key={bar.id} bar={bar} />;
             })}
@@ -216,18 +220,22 @@ const BarsPubs = () => {
   } else {
     return (
       <>
-      <div className="py-7">
-        <img
-          className="relative max-w-7xl mx-auto my-1 rounded-lg"
-          src="https://b.zmtcdn.com/data/collections/043714a8f7d80d494329b69c648a2bc6_1675237482.jpg?output-format=webp&fit=around|858.4000000000001:256&crop=858.4000000000001:256;*,*"
-        />
-        <section className="pl-56 pb-56 absolute text-white bottom-0">
-        <h1 className="font-semibold text-4xl mb-4">6 Finest Microbreweries in Kolkata</h1>
-        <h6 className="">For the times when bottled brews just do not cut it!</h6>
-        </section>
+        <div className="py-7">
+          <img
+            className="relative max-w-7xl mx-auto my-1 rounded-lg"
+            src="https://b.zmtcdn.com/data/collections/043714a8f7d80d494329b69c648a2bc6_1675237482.jpg?output-format=webp&fit=around|858.4000000000001:256&crop=858.4000000000001:256;*,*"
+          />
+          <section className="pl-56 pb-56 absolute text-white bottom-0">
+            <h1 className="font-semibold text-4xl mb-4">
+              6 Finest Microbreweries in Kolkata
+            </h1>
+            <h6 className="">
+              For the times when bottled brews just do not cut it!
+            </h6>
+          </section>
         </div>
         <div>
-          <div className="flex flex-wrap justify-center">
+          <div className="flex flex-wrap justify-center pb-12">
             {breweriesData.map((breweries) => {
               return <BreweriesItem key={breweries.id} breweries={breweries} />;
             })}

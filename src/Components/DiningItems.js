@@ -1,6 +1,6 @@
 const DiningItems = ({ item }) => {
   return (
-    <div>
+    <div className="pb-5">
       <div className="dining-item-cover w-72 h-96 p-1 m-6 shadow-md border-white bg-white rounded-md hover:scale-105 ease-in-out duration-300 ">
         <img
           src={item.cover}

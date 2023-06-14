@@ -22,7 +22,7 @@ export const carouselItems = [
 
 export const DiningCarousel = () => {
   return (
-    <div className="delivery-collection bg-gray-50">
+    <div className="delivery-collection bg-gray-50 pb-14">
       <div className="max-width max-w-5xl mx-auto my-0">
         <div className="relative flex items-center">
           {carouselItems.map((carousel) => {
