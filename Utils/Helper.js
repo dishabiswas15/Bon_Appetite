@@ -1,5 +1,5 @@
 export function filterData(searchInput, restaurants) {
-  console.log("sdfsfs");
+  //console.log("sdfsfs");
   const filterData =
     restaurants.filter((restaurants) =>
       restaurants?.data?.name

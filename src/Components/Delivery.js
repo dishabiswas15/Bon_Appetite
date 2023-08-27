@@ -14,9 +14,9 @@ const Delivery = ({ restaurants }) => {
         ) : (
           restaurants.map((restraunt) => {
             return (
-              <Link to={"restaurant/" + restraunt.data.id}>
+              <Link to={"restaurant/" + restraunt?.info?.id}>
                 {" "}
-                <RestaurantCard key={restraunt.data.id} {...restraunt.data} />
+                <RestaurantCard key={restraunt?.info?.id} {...restraunt.info} />
               </Link>
             );
           })
