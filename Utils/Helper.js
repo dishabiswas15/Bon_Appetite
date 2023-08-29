@@ -2,7 +2,7 @@ export function filterData(searchInput, restaurants) {
   //console.log("sdfsfs");
   const filterData =
     restaurants.filter((restaurants) =>
-      restaurants?.data?.name
+      restaurants?.info?.name
         ?.toLowerCase()
         ?.includes(searchInput.toLowerCase())
     );
